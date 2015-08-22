@@ -40,6 +40,6 @@ void loop() {
       delay(100);
       Keyboard.releaseAll();
     }
-    else if (digitalRead(keys[i].pin) == HIGH)
-      }
-}
+    else if (digitalRead(keys[i].pin) == HIGH) {
+    }
+  }
