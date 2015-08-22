@@ -7,7 +7,7 @@
 
 // http://www.cplusplus.com/doc/tutorial/structures/
 struct Key {
-  int pin;  
+  int pin;
   char keyCode;
   boolean wasPushed;
 };
@@ -18,12 +18,12 @@ Key keys[NUM_OF_KEYS];
 void setup() {
   // Initialize key data
   // { buttonPin, keyCode }
-  keys[0] = { 2, KEY_LEFT_CTRL };
-  keys[1] = { 3, KEY_LEFT_ALT };
-  keys[2] = { 4, KEY_LEFT_SHIFT };
-  keys[3] = { 5, KEY_BACKSPACE };
-  
-  // make pins inputs and turn on the 
+  keys[0] = { 2, KEY_LEFT_CTRL , false };
+  keys[1] = { 3, KEY_LEFT_ALT, false};
+  keys[2] = { 4, KEY_LEFT_SHIFT, false };
+  keys[3] = { 5, KEY_BACKSPACE, false };
+
+  // make pins inputs and turn on the
   // pullup resistor so they go high unless
   // connected to ground:
   for(int i = 0; i < NUM_OF_KEYS; i++) {
@@ -40,5 +40,6 @@ void loop() {
       delay(100);
       Keyboard.releaseAll();
     }
-  }
+    else if (digitalRead(keys[i].pin) == HIGH)
+      }
 }
