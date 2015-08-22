@@ -35,11 +35,12 @@ void setup() {
 
 void loop() {
   for(int i = 0; i < NUM_OF_KEYS; i++) {
-    if(digitalRead(keys[i].pin) == LOW) { // If the key is pressed...
+    if((digitalRead(keys[i].pin) == LOW) && (keys[i].wasPushed == false)) { // If the key is pressed...
       Keyboard.press(keys[i].keyCode); // Send the key
       keys[i].wasPushed = true;
     }
-    else if (digitalRead(keys[i].pin) == HIGH) {
+    else if ((digitalRead(keys[i].pin) == HIGH) && (keys[i].wasPushed == true)) {
       Keyboard.release(keys[i].keyCode);
+      keys[i].wasPushed = false;
     }
   }
