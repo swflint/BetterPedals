@@ -17,7 +17,7 @@ Key keys[NUM_OF_KEYS];
 
 void setup() {
   // Initialize key data
-  // { buttonPin, keyCode }
+  // { buttonPin, keyCode, wasPushed }
   keys[0] = { 2, KEY_LEFT_CTRL , false };
   keys[1] = { 3, KEY_LEFT_ALT, false};
   keys[2] = { 4, KEY_LEFT_SHIFT, false };
@@ -37,9 +37,9 @@ void loop() {
   for(int i = 0; i < NUM_OF_KEYS; i++) {
     if(digitalRead(keys[i].pin) == LOW) { // If the key is pressed...
       Keyboard.press(keys[i].keyCode); // Send the key
-      delay(100);
-      Keyboard.releaseAll();
+      keys[i].wasPushed = true;
     }
     else if (digitalRead(keys[i].pin) == HIGH) {
+      Keyboard.release(keys[i].keyCode);
     }
   }
