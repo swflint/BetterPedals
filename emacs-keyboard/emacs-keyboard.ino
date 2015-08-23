@@ -47,3 +47,4 @@ void loop() {
       keys[i].wasPushed = false;
     }
   }
+}
