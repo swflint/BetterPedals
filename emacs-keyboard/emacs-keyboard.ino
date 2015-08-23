@@ -22,7 +22,7 @@ void setup() {
   keys[0] = { 5, KEY_LEFT_CTRL , false };
   keys[1] = { 4, KEY_LEFT_ALT, false};
   keys[2] = { 3, KEY_LEFT_SHIFT, false };
-  keys[3] = { 2, KEY_BACKSPACE, false };
+  keys[3] = { 2, KEY_TAB, false };
 
   // make pins inputs and turn on the
   // pullup resistor so they go high unless
