@@ -19,10 +19,10 @@ void setup() {
   // Initialize key data
   // https://www.arduino.cc/en/Reference/KeyboardModifiers
   // { buttonPin, keyCode, wasPushed }
-  keys[0] = { 2, KEY_LEFT_CTRL , false };
-  keys[1] = { 3, KEY_LEFT_ALT, false};
-  keys[2] = { 4, KEY_LEFT_SHIFT, false };
-  keys[3] = { 5, KEY_BACKSPACE, false };
+  keys[0] = { 5, KEY_LEFT_CTRL , false };
+  keys[1] = { 4, KEY_LEFT_ALT, false};
+  keys[2] = { 3, KEY_LEFT_SHIFT, false };
+  keys[3] = { 2, KEY_BACKSPACE, false };
 
   // make pins inputs and turn on the
   // pullup resistor so they go high unless
