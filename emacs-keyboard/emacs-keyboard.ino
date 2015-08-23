@@ -47,4 +47,5 @@ void loop() {
       keys[i].wasPushed = false;
     }
   }
+  delay(10);
 }
